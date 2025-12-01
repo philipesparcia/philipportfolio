@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philip Cesar B. Esparcia | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Fonts */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background-color: #121212; color: #e0e0e0; line-height: 1.6; }
+    a { color: #1db954; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1db954;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+/* Tablet */
+@media(max-width: 768px) {
+  .profile-pic { width: 160px; height: 160px; }
+}
+
+/* Mobile */
+@media(max-width: 480px) {
+  .profile-pic { width: 140px; height: 140px; }
+}    /* Container */
+    .container { width: 90%; max-width: 1000px; margin: auto; padding: 2rem 0; }
+
+    /* Header */
+    header { text-align: center; padding: 2rem 0; }
+    header h1 { font-size: 2.5rem; color: #1db954; }
+    header h2 { font-size: 1.2rem; font-weight: 400; color: #bbb; margin-top: 0.5rem; }
+
+    /* Sections */
+    section { margin: 3rem 0; }
+
+    section h3 { font-size: 1.8rem; color: #1db954; margin-bottom: 1rem; border-bottom: 2px solid #1db954; display: inline-block; padding-bottom: 0.3rem; }
+
+    /* About Me */
+    .bio { font-size: 1rem; color: #ccc; margin-top: 1rem; }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .skill { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; transition: transform 0.3s; }
+    .skill:hover { transform: translateY(-5px); }
+
+    /* Contact */
+    .contact p { margin: 0.5rem 0; }
+
+    /* Footer */
+    footer { text-align: center; margin-top: 4rem; padding: 2rem 0; border-top: 1px solid #333; font-size: 0.9rem; color: #666; }
+
+    /* Responsive */
+    @media(max-width: 600px){
+      header h1 { font-size: 2rem; }
+      section h3 { font-size: 1.5rem; }
+    }
+
+.experience { margin-top: 1rem; }
+.job { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.job h4 { color: #1db954; margin-bottom: 0.3rem; font-size: 1.1rem; }
+.job p { color: #ccc; font-size: 0.95rem; }
+
+
+/* Education Section */
+.education { margin-top: 1rem; }
+.edu { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.edu h4 { color: #1db954; margin-bottom: 0.3rem; font-size: 1.1rem; }
+.edu p { color: #ccc; font-size: 0.95rem; }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+  <header>
+  <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="profile-pic">
+  <h1>Philip Cesar B. Esparcia</h1>
+  <h2> FREELANCE VIRTUAL ASSISTANT & 
+I NFORMATION TECHNOLOGY PROFESSIONAL</h2>
+  <a href="PHILIP CESAR ESPARCIA RESUME.pdf" class="resume-btn" download>Download Resume</a>
+</header>
+    <!-- About Me -->
+    <section id="about">
+      <h3>About Me</h3>
+      <p class="bio">
+        Innovative IT professional seeking a strategic client partnership where strong technical expertise can be integrated directly into a Virtual Assistant role. Proven ability to leverage advanced computer skills and problem-solving to streamline operations, enhance digital efficiency, and deliver dedicated, high-quality administrative support.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h3>Skills</h3>
+      <div class="skills">
+        <div class="skill">Programming: VB.Net, C++, C#, ASP.Net, MySQL</div>
+        <div class="skill">Microsoft Office: Word, Excel, Access, PowerPoint</div>
+        <div class="skill">NCII (Computer System Servicing)</div>
+        <div class="skill">Windows Reformat: 7, 8, 10</div>
+        <div class="skill">System Management & Maintenance</div>
+        <div class="skill">CCTV Configuration & Access Point Installation</div>
+        <div class="skill">Shopify Product Listing</div>
+        <div class="skill">Lead Generation</div>
+        <div class="skill">Time Management & Prioritization</div>
+        <div class="skill">Independent & Collaborative Decision Making</div>
+      </div>
+    </section>
+
+<section id="experience">
+  <h3>Work Experience</h3>
+  <div class="experience">
+    <div class="job">
+      <h4>Computer Instructor | 2015 - 2016</h4>
+      <p>AMA Computer Learning Center (ACLC)</p>
+    </div>
+    <div class="job">
+      <h4>IT - Technical Support Specialist | 2016 - 2021</h4>
+      <p>Banana Telecommunications, Inc.</p>
+    </div>
+    <div class="job">
+      <h4>Technical Sales Specialist | 2016</h4>
+      <p>Banana Telecommunications, Inc.</p>
+    </div>
+    <div class="job">
+      <h4>IT - Technical Support Specialist | 2021 - 2023</h4>
+      <p>FTC Group of Companies</p>
+    </div>
+    <div class="job">
+      <h4>Freelance Operational Data Entry | 2023 - 2025</h4>
+      <p>Freelancing collaborating with businessmen in PH</p>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h3>Education</h3>
+  <div class="education">
+    <div class="edu">
+      <h4>Bachelor of Science in Information Technology</h4>
+      <p>ACLC Computer Learning Center</p>
+      <p>Major in Software Development</p>
+      <p>NCII Credential</p>
+    </div>
+    <div class="edu">
+      <h4>Alternative Learning System</h4>
+      <p>Department of Education (ALS)</p>
+    
+    </div>
+  </div>
+</section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h3>Contact Me</h3>
+      <div class="contact">
+        <p>Email: <a href="mailto:youremail@example.com">philip.esparcia@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+        <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">github.com/yourgithub</a></p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Philip Cesar B. Esparcia. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
