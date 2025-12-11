@@ -12,26 +12,25 @@
     a { color: #1db954; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-.profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #1db954;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-}
-/* Tablet */
-@media(max-width: 768px) {
-  .profile-pic { width: 160px; height: 160px; }
-}
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #1db954;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
 
-/* Mobile */
-@media(max-width: 480px) {
-  .profile-pic { width: 140px; height: 140px; }
-}    
+    @media(max-width: 768px) {
+      .profile-pic { width: 160px; height: 160px; }
+    }
 
-/* Container */
+    @media(max-width: 480px) {
+      .profile-pic { width: 140px; height: 140px; }
+    }
+
+    /* Container */
     .container { width: 90%; max-width: 1000px; margin: auto; padding: 2rem 0; }
 
     /* Header */
@@ -41,10 +40,9 @@
 
     /* Sections */
     section { margin: 3rem 0; }
-
     section h3 { font-size: 1.8rem; color: #1db954; margin-bottom: 1rem; border-bottom: 2px solid #1db954; display: inline-block; padding-bottom: 0.3rem; }
 
-    /* About Me */
+    /* About */
     .bio { font-size: 1rem; color: #ccc; margin-top: 1rem; }
 
     /* Skills */
@@ -52,40 +50,55 @@
     .skill { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; transition: transform 0.3s; }
     .skill:hover { transform: translateY(-5px); }
 
+    /* Work Experience */
+    .experience { margin-top: 1rem; }
+    .job { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
+    .job h4 { color: #1db954; margin-bottom: 0.3rem; font-size: 1.1rem; }
+    .job p { color: #ccc; font-size: 0.95rem; }
+
+    /* Education */
+    .education { margin-top: 1rem; }
+    .edu { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
+    .edu h4 { color: #1db954; margin-bottom: 0.3rem; font-size: 1.1rem; }
+    .edu p { color: #ccc; font-size: 0.95rem; }
+
+    /* Media Section */
+    .media-section {
+      background-color: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .media-section h3 {
+      border: none;
+      margin-bottom: 1rem;
+    }
+
+    video, img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
     /* Contact */
     .contact p { margin: 0.5rem 0; }
 
     /* Footer */
     footer { text-align: center; margin-top: 4rem; padding: 2rem 0; border-top: 1px solid #333; font-size: 0.9rem; color: #666; }
 
-    /* Responsive */
-    @media(max-width: 600px){
-      header h1 { font-size: 2rem; }
-      section h3 { font-size: 1.5rem; }
-    }
-
-.experience { margin-top: 1rem; }
-.job { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
-.job h4 { color: #1db954; margin-bottom: 0.3rem; font-size: 1.1rem; }
-.job p { color: #ccc; font-size: 0.95rem; }
-
-/* Education Section */
-.education { margin-top: 1rem; }
-.edu { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
-.edu h4 { color: #1db954; margin-bottom: 0.3rem; font-size: 1.1rem; }
-.edu p { color: #ccc; font-size: 0.95rem; }
-
   </style>
 </head>
 <body>
   <div class="container">
+
     <!-- Header -->
-  <header>
-  <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="profile-pic">
-  <h1>Philip Cesar B. Esparcia</h1>
-  <h2> FREELANCE VIRTUAL ASSISTANT & INFORMATION TECHNOLOGY PROFESSIONAL</h2>
-  <a href="PHILIP CESAR ESPARCIA RESUME.pdf" class="resume-btn" download>Download Resume</a>
-</header>
+    <header>
+      <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="profile-pic">
+      <h1>Philip Cesar B. Esparcia</h1>
+      <h2> FREELANCE VIRTUAL ASSISTANT & INFORMATION TECHNOLOGY PROFESSIONAL</h2>
+      <a href="PHILIP CESAR ESPARCIA RESUME.pdf" download>Download Resume</a>
+    </header>
 
     <!-- About Me -->
     <section id="about">
@@ -113,55 +126,67 @@
       </div>
     </section>
 
-<section id="experience">
-  <h3>Work Experience</h3>
-  <div class="experience">
-    <div class="job">
-      <h4>Computer Instructor | 2015 - 2016</h4>
-      <p>AMA Computer Learning Center (ACLC)</p>
-    </div>
-    <div class="job">
-      <h4>IT - Technical Support Specialist | 2016 - 2021</h4>
-      <p>Banana Telecommunications, Inc.</p>
-    </div>
-    <div class="job">
-      <h4>Technical Sales Specialist | 2016</h4>
-      <p>Banana Telecommunications, Inc.</p>
-    </div>
-    <div class="job">
-      <h4>IT - Technical Support Specialist | 2021 - 2023</h4>
-      <p>FTC Group of Companies</p>
-    </div>
-    <div class="job">
-      <h4>Freelance Operational Data Entry | 2023 - 2025</h4>
-      <p>Freelancing collaborating with businessmen in PH</p>
-    </div>
-  </div>
-</section>
+    <!-- Work Experience -->
+    <section id="experience">
+      <h3>Work Experience</h3>
+      <div class="experience">
+        <div class="job"><h4>Computer Instructor | 2015 - 2016</h4><p>AMA Computer Learning Center (ACLC)</p></div>
+        <div class="job"><h4>IT - Technical Support Specialist | 2016 - 2021</h4><p>Banana Telecommunications, Inc.</p></div>
+        <div class="job"><h4>Technical Sales Specialist | 2016</h4><p>Banana Telecommunications, Inc.</p></div>
+        <div class="job"><h4>IT - Technical Support Specialist | 2021 - 2023</h4><p>FTC Group of Companies</p></div>
+        <div class="job"><h4>Freelance Operational Data Entry | 2023 - 2025</h4><p>Freelancing collaborating with businessmen in PH</p></div>
+      </div>
+    </section>
 
-<section id="education">
-  <h3>Education</h3>
-  <div class="education">
-    <div class="edu">
-      <h4>Bachelor of Science in Information Technology</h4>
-      <p>ACLC Computer Learning Center</p>
-      <p>Major in Software Development</p>
-      <p>NCII Credential</p>
-    </div>
-    <div class="edu">
-      <h4>Alternative Learning System</h4>
-      <p>Department of Education (ALS)</p>
-    </div>
-  </div>
-</section>
+    <!-- Education -->
+    <section id="education">
+      <h3>Education</h3>
+      <div class="education">
+        <div class="edu">
+          <h4>Bachelor of Science in Information Technology</h4>
+          <p>ACLC Computer Learning Center</p>
+          <p>Major in Software Development</p>
+          <p>NCII Credential</p>
+        </div>
+        <div class="edu">
+          <h4>Alternative Learning System</h4>
+          <p>Department of Education (ALS)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION VIDEO -->
+    <section class="media-section">
+      <h3>Introduction Video</h3>
+      <video controls>
+        <source src="intro.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <!-- WORKSPACE -->
+    <section class="media-section">
+      <h3>Workspace</h3>
+      <img src="WORKSPACE.JPEG" alt="Workspace">
+    </section>
+
+    <!-- LAPTOP DETAILS -->
+    <section class="media-section">
+      <h3>Laptop Details</h3>
+      <img src="LAPTOP%20DETAILS.png" alt="Laptop Details">
+    </section>
+
+    <!-- INTERNET SPEED -->
+    <section class="media-section">
+      <h3>Internet Speed Test</h3>
+      <img src="internet%20test.png" alt="Internet Speed">
+    </section>
 
     <!-- Contact -->
     <section id="contact">
       <h3>Contact Me</h3>
       <div class="contact">
         <p>Email: <a href="mailto:philip.esparcia@gmail.com">philip.esparcia@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-        <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">github.com/yourgithub</a></p>
+        <p>OnlineJob: <a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank">https://www.onlinejobs.ph/jobseekers/info/3574279</a></p>
       </div>
     </section>
 
