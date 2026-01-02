@@ -1,207 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Philip Cesar B. Esparcia | Portfolio</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background-color: #121212; color: #e0e0e0; line-height: 1.6; }
-    a { color: #1db954; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* LAYOUT */
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 2rem 0;
+    }
 
     .profile-pic {
       width: 200px;
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #1db954;
+      border: 3px solid #38bdf8;
       margin-bottom: 1rem;
     }
 
-    @media(max-width: 768px) {
-      .profile-pic { width: 160px; height: 160px; }
+    header h1 {
+      font-size: 2.5rem;
+      color: #38bdf8;
     }
 
-    @media(max-width: 480px) {
-      .profile-pic { width: 140px; height: 140px; }
+    header h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #cbd5e1;
+      margin-top: 0.5rem;
     }
 
-    .container { width: 90%; max-width: 1000px; margin: auto; padding: 2rem 0; }
+    /* SECTIONS */
+    section {
+      margin: 3rem 0;
+    }
 
-    header { text-align: center; padding: 2rem 0; }
-    header h1 { font-size: 2.5rem; color: #1db954; }
-    header h2 { font-size: 1.2rem; font-weight: 400; color: #bbb; margin-top: 0.5rem; }
-
-    section { margin: 3rem 0; }
     section h3 {
-      font-size: 1.8rem;
-      color: #1db954;
+      font-size: 1.6rem;
+      color: #38bdf8;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #1db954;
+      border-bottom: 2px solid #38bdf8;
       display: inline-block;
       padding-bottom: 0.3rem;
     }
 
-    .bio { font-size: 1rem; color: #ccc; margin-top: 1rem; }
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1rem;
+    .bio {
+      font-size: 1rem;
+      color: #d1d5db;
       margin-top: 1rem;
     }
 
-    .skill {
-      background-color: #1e1e1e;
-      padding: 1rem;
-      border-radius: 8px;
-      transition: transform 0.3s;
+    /* CARD STYLES */
+    .skills,
+    .experience,
+    .education {
+      margin-top: 1rem;
     }
 
-    .skill:hover { transform: translateY(-5px); }
-
-    .experience, .education { margin-top: 1rem; }
-
-    .job, .edu {
-      background-color: #1e1e1e;
+    .skill,
+    .job,
+    .edu {
+      background-color: #1e293b;
       padding: 1rem;
       border-radius: 8px;
       margin-bottom: 1rem;
+      transition: all 0.3s ease;
     }
 
-    .job h4, .edu h4 {
-      color: #1db954;
+    .skill:hover,
+    .job:hover,
+    .edu:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .job h4,
+    .edu h4 {
+      color: #38bdf8;
       margin-bottom: 0.3rem;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
+    /* MEDIA */
     .media-section {
-      background-color: #1e1e1e;
+      background-color: #1e293b;
       padding: 1.5rem;
       border-radius: 10px;
       margin-bottom: 2rem;
     }
 
-    video, img {
+    video,
+    img {
       width: 100%;
       border-radius: 10px;
       margin-top: 1rem;
     }
 
+    /* CONTACT */
+    #contact p {
+      margin: 0.5rem 0;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       margin-top: 4rem;
       padding: 2rem 0;
-      border-top: 1px solid #333;
+      border-top: 1px solid #334155;
       font-size: 0.9rem;
-      color: #666;
+      color: #94a3b8;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .profile-pic {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+      }
     }
   </style>
 </head>
 
 <body>
+
 <div class="container">
 
-<!-- Header -->
-<header>
-  <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="profile-pic">
-  <h1>Philip Cesar B. Esparcia</h1>
-  <h2>Freelance Virtual Assistant & Information Technology Professional</h2>
-  <a href="PHILIP CESAR ESPARCIA RESUME.pdf" download>Download Resume</a>
-</header>
+  <!-- HEADER -->
+  <header>
+    <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="profile-pic">
+    <h1>Philip Cesar B. Esparcia</h1>
+    <h2>Freelance Virtual Assistant & IT Support Professional</h2>
+    <a href="PHILIP CESAR ESPARCIA RESUME.pdf" download>Download Resume</a>
+  </header>
 
-<!-- About -->
-<section id="about">
-  <h3>About Me</h3>
-  <p class="bio">
-    Innovative IT professional with over 10 years of experience in technical support, system administration, and virtual assistance.
-    Skilled in troubleshooting, automation, and providing reliable technical solutions that improve productivity and efficiency.
-  </p>
-</section>
+  <!-- ABOUT -->
+  <section id="about">
+    <h3>About Me</h3>
+    <p class="bio">
+      Experienced IT professional with over 10 years of expertise in technical support,
+      system administration, and virtual assistance. I specialize in troubleshooting,
+      system optimization, and providing reliable technical solutions to support business growth.
+    </p>
+  </section>
 
-<!-- CORE SKILLS -->
-<section id="core-skills">
-  <h3>Core Skills</h3>
-  <div class="skills">
-    <div class="skill">Technical Support (Tier 1–2)</div>
-    <div class="skill">Remote Troubleshooting</div>
-    <div class="skill">System Administration</div>
-    <div class="skill">Customer Support & Ticket Handling</div>
-    <div class="skill">Network Setup & Maintenance</div>
-    <div class="skill">Hardware & Software Installation</div>
-    <div class="skill">Data Entry & Management</div>
-    <div class="skill">Time Management & Multitasking</div>
-  </div>
-</section>
-
-<!-- TOOLS -->
-<section id="tools">
-  <h3>Tools & Technologies</h3>
-  <div class="skills">
-    <div class="skill">Windows OS / macOS</div>
-    <div class="skill">Microsoft 365 (Outlook, Excel, Word)</div>
-    <div class="skill">Active Directory (Basic)</div>
-    <div class="skill">Remote Desktop Tools</div>
-    <div class="skill">HTML, CSS, JavaScript</div>
-    <div class="skill">Shopify Admin & Product Upload</div>
-    <div class="skill">CCTV & Network Configuration</div>
-    <div class="skill">Basic SQL / MySQL</div>
-  </div>
-</section>
-
-<!-- Experience -->
-<section id="experience">
-  <h3>Work Experience</h3>
-  <div class="experience">
-    <div class="job"><h4>Computer Instructor | 2015–2016</h4><p>AMA Computer Learning Center (ACLC)</p></div>
-    <div class="job"><h4>IT Technical Support Specialist | 2016–2021</h4><p>Banana Telecommunications, Inc.</p></div>
-    <div class="job"><h4>IT Technical Support Specialist | 2021–2023</h4><p>FTC Group of Companies</p></div>
-    <div class="job"><h4>Freelance Operational Data Entry | 2023–2025</h4><p>Remote / Freelance</p></div>
-  </div>
-</section>
-
-<!-- Education -->
-<section id="education">
-  <h3>Education</h3>
-  <div class="education">
-    <div class="edu">
-      <h4>Bachelor of Science in Information Technology</h4>
-      <p>ACLC – Major in Software Development</p>
-      <p>NCII Certified</p>
+  <!-- CORE SKILLS -->
+  <section id="core-skills">
+    <h3>Core Skills</h3>
+    <div class="skills">
+      <div class="skill">Technical Support (Tier 1–2)</div>
+      <div class="skill">Remote Troubleshooting</div>
+      <div class="skill">System Administration</div>
+      <div class="skill">Customer Support & Ticket Handling</div>
+      <div class="skill">Network Setup & Maintenance</div>
+      <div class="skill">Hardware & Software Installation</div>
+      <div class="skill">Data Entry & Documentation</div>
+      <div class="skill">Time Management & Multitasking</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Media -->
-<section class="media-section">
-  <h3>Introduction Video</h3>
-  <video controls>
-    <source src="intro.mp4" type="video/mp4">
-  </video>
-</section>
+  <!-- TOOLS -->
+  <section id="tools">
+    <h3>Tools & Technologies</h3>
+    <div class="skills">
+      <div class="skill">Windows OS / macOS</div>
+      <div class="skill">Microsoft 365 (Outlook, Excel, Word)</div>
+      <div class="skill">Active Directory (Basic)</div>
+      <div class="skill">Remote Desktop Tools</div>
+      <div class="skill">HTML, CSS, JavaScript</div>
+      <div class="skill">Shopify Admin</div>
+      <div class="skill">CCTV & Network Setup</div>
+      <div class="skill">Basic SQL / MySQL</div>
+    </div>
+  </section>
 
-<section class="media-section">
-  <h3>Workspace</h3>
-  <img src="WORKSPACE.jpg" alt="Workspace">
-</section>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h3>Work Experience</h3>
+    <div class="experience">
+      <div class="job">
+        <h4>Computer Instructor | 2015–2016</h4>
+        <p>AMA Computer Learning Center (ACLC)</p>
+      </div>
 
-<section class="media-section">
-  <h3>Laptop Details</h3>
-  <img src="LAPTOP DETAILS.png" alt="Laptop Details">
-</section>
+      <div class="job">
+        <h4>IT Technical Support Specialist | 2016–2021</h4>
+        <p>Banana Telecommunications, Inc.</p>
+      </div>
 
-<!-- Contact -->
-<section id="contact">
-  <h3>Contact Me</h3>
-  <p>Email: <a href="mailto:philip.esparcia@gmail.com">philip.esparcia@gmail.com</a></p>
-  <p>OnlineJobs.ph: <a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank">View Profile</a></p>
-</section>
+      <div class="job">
+        <h4>IT Technical Support Specialist | 2021–2023</h4>
+        <p>FTC Group of Companies</p>
+      </div>
 
-<footer>
-  &copy; 2025 Philip Cesar B. Esparcia. All rights reserved.
-</footer>
+      <div class="job">
+        <h4>Freelance Operational Data Entry | 2023–2025</h4>
+        <p>Remote / Freelance</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h3>Education</h3>
+    <div class="education">
+      <div class="edu">
+        <h4>Bachelor of Science in Information Technology</h4>
+        <p>ACLC – Major in Software Development</p>
+        <p>NCII Certified</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA -->
+  <section class="media-section">
+    <h3>Introduction Video</h3>
+    <video controls>
+      <source src="intro.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <section class="media-section">
+    <h3>Workspace</h3>
+    <img src="WORKSPACE.jpg" alt="Workspace">
+  </section>
+
+  <section class="media-section">
+    <h3>Laptop Details</h3>
+    <img src="LAPTOP DETAILS.png" alt="Laptop Details">
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h3>Contact Me</h3>
+    <p>Email: <a href="mailto:philip.esparcia@gmail.com">philip.esparcia@gmail.com</a></p>
+    <p>OnlineJobs.ph: 
+      <a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank">
+        View Profile
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Philip Cesar B. Esparcia. All rights reserved.
+  </footer>
 
 </div>
 </body>
