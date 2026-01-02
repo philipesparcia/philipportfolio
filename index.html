@@ -6,7 +6,6 @@
   <title>Philip Cesar B. Esparcia | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset & Fonts */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Roboto', sans-serif; background-color: #121212; color: #e0e0e0; line-height: 1.6; }
     a { color: #1db954; text-decoration: none; }
@@ -19,7 +18,6 @@
       object-fit: cover;
       border: 3px solid #1db954;
       margin-bottom: 1rem;
-      transition: all 0.3s ease;
     }
 
     @media(max-width: 768px) {
@@ -30,49 +28,60 @@
       .profile-pic { width: 140px; height: 140px; }
     }
 
-    /* Container */
     .container { width: 90%; max-width: 1000px; margin: auto; padding: 2rem 0; }
 
-    /* Header */
     header { text-align: center; padding: 2rem 0; }
     header h1 { font-size: 2.5rem; color: #1db954; }
     header h2 { font-size: 1.2rem; font-weight: 400; color: #bbb; margin-top: 0.5rem; }
 
-    /* Sections */
     section { margin: 3rem 0; }
-    section h3 { font-size: 1.8rem; color: #1db954; margin-bottom: 1rem; border-bottom: 2px solid #1db954; display: inline-block; padding-bottom: 0.3rem; }
+    section h3 {
+      font-size: 1.8rem;
+      color: #1db954;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #1db954;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
 
-    /* About */
     .bio { font-size: 1rem; color: #ccc; margin-top: 1rem; }
 
-    /* Skills */
-    .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
-    .skill { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; transition: transform 0.3s; }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
     .skill:hover { transform: translateY(-5px); }
 
-    /* Work Experience */
-    .experience { margin-top: 1rem; }
-    .job { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
-    .job h4 { color: #1db954; margin-bottom: 0.3rem; font-size: 1.1rem; }
-    .job p { color: #ccc; font-size: 0.95rem; }
+    .experience, .education { margin-top: 1rem; }
 
-    /* Education */
-    .education { margin-top: 1rem; }
-    .edu { background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
-    .edu h4 { color: #1db954; margin-bottom: 0.3rem; font-size: 1.1rem; }
-    .edu p { color: #ccc; font-size: 0.95rem; }
+    .job, .edu {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
 
-    /* Media Section */
+    .job h4, .edu h4 {
+      color: #1db954;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+    }
+
     .media-section {
       background-color: #1e1e1e;
       padding: 1.5rem;
       border-radius: 10px;
       margin-bottom: 2rem;
-    }
-
-    .media-section h3 {
-      border: none;
-      margin-bottom: 1rem;
     }
 
     video, img {
@@ -81,123 +90,119 @@
       margin-top: 1rem;
     }
 
-    /* Contact */
-    .contact p { margin: 0.5rem 0; }
-
-    /* Footer */
-    footer { text-align: center; margin-top: 4rem; padding: 2rem 0; border-top: 1px solid #333; font-size: 0.9rem; color: #666; }
-
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #666;
+    }
   </style>
 </head>
+
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- Header -->
-    <header>
-      <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="profile-pic">
-      <h1>Philip Cesar B. Esparcia</h1>
-      <h2> FREELANCE VIRTUAL ASSISTANT & INFORMATION TECHNOLOGY PROFESSIONAL</h2>
-      <a href="PHILIP CESAR ESPARCIA RESUME.pdf" download>Download Resume</a>
-    </header>
+<!-- Header -->
+<header>
+  <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="profile-pic">
+  <h1>Philip Cesar B. Esparcia</h1>
+  <h2>Freelance Virtual Assistant & Information Technology Professional</h2>
+  <a href="PHILIP CESAR ESPARCIA RESUME.pdf" download>Download Resume</a>
+</header>
 
-    <!-- About Me -->
-    <section id="about">
-      <h3>About Me</h3>
-      <p class="bio">
-        Innovative IT professional seeking a strategic client partnership where strong technical expertise can be integrated directly into a Virtual Assistant role. Proven ability to leverage advanced computer skills and problem-solving to streamline operations, enhance digital efficiency, and deliver dedicated, high-quality administrative support.
-      </p>
-    </section>
+<!-- About -->
+<section id="about">
+  <h3>About Me</h3>
+  <p class="bio">
+    Innovative IT professional with over 10 years of experience in technical support, system administration, and virtual assistance.
+    Skilled in troubleshooting, automation, and providing reliable technical solutions that improve productivity and efficiency.
+  </p>
+</section>
 
-    <!-- Skills -->
-    <section id="skills">
-      <h3>Skills</h3>
-      <div class="skills">
-        <div class="skill">Programming: VB.Net, C++, C#, ASP.Net, MySQL</div>
-        <div class="skill">Microsoft Office: Word, Excel, Access, PowerPoint</div>
-        <div class="skill">NCII (Computer System Servicing)</div>
-        <div class="skill">Windows Reformat: 7, 8, 10</div>
-        <div class="skill">System Management & Maintenance</div>
-        <div class="skill">CCTV Configuration & Access Point Installation</div>
-        <div class="skill">Shopify Product Listing</div>
-        <div class="skill">Lead Generation</div>
-        <div class="skill">Time Management & Prioritization</div>
-        <div class="skill">Independent & Collaborative Decision Making</div>
-        <div class="skill">Web Developer: HTML, CSS, JavaScript, Shopify Theme Customization</div>
-      </div>
-    </section>
-
-    <!-- Work Experience -->
-    <section id="experience">
-      <h3>Work Experience</h3>
-      <div class="experience">
-        <div class="job"><h4>Computer Instructor | 2015 - 2016</h4><p>AMA Computer Learning Center (ACLC)</p></div>
-        <div class="job"><h4>IT - Technical Support Specialist | 2016 - 2021</h4><p>Banana Telecommunications, Inc.</p></div>
-        <div class="job"><h4>Technical Sales Specialist | 2016</h4><p>Banana Telecommunications, Inc.</p></div>
-        <div class="job"><h4>IT - Technical Support Specialist | 2021 - 2023</h4><p>FTC Group of Companies</p></div>
-        <div class="job"><h4>Freelance Operational Data Entry | 2023 - 2025</h4><p>Freelancing collaborating with businessmen in PH</p></div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education">
-      <h3>Education</h3>
-      <div class="education">
-        <div class="edu">
-          <h4>Bachelor of Science in Information Technology</h4>
-          <p>ACLC Computer Learning Center</p>
-          <p>Major in Software Development</p>
-          <p>NCII Credential</p>
-        </div>
-        <div class="edu">
-          <h4>Alternative Learning System</h4>
-          <p>Department of Education (ALS)</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- INTRODUCTION VIDEO -->
-    <section class="media-section">
-      <h3>Introduction Video</h3>
-      <video controls>
-        <source src="intro.mp4" type="video/mp4">
-      </video>
-    </section>
-
-    <!-- WORKSPACE -->
-    <section class="media-section">
-      <h3>Workspace</h3>
-      <img src="WORKSPACE.jpg" alt="Workspace">
-    </section>
-
-    <!-- LAPTOP DETAILS -->
-    <section class="media-section">
-      <h3>Laptop Details</h3>
-      <img src="LAPTOP%20DETAILS.png" alt="Laptop Details">
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <h3>Contact Me</h3>
-      <div class="contact">
-        <p>Email: <a href="mailto:philip.esparcia@gmail.com">philip.esparcia@gmail.com</a></p>
-        <p>OnlineJob: <a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank">https://www.onlinejobs.ph/jobseekers/info/3574279</a></p>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      &copy; 2025 Philip Cesar B. Esparcia. All rights reserved.
-    </footer>
+<!-- CORE SKILLS -->
+<section id="core-skills">
+  <h3>Core Skills</h3>
+  <div class="skills">
+    <div class="skill">Technical Support (Tier 1–2)</div>
+    <div class="skill">Remote Troubleshooting</div>
+    <div class="skill">System Administration</div>
+    <div class="skill">Customer Support & Ticket Handling</div>
+    <div class="skill">Network Setup & Maintenance</div>
+    <div class="skill">Hardware & Software Installation</div>
+    <div class="skill">Data Entry & Management</div>
+    <div class="skill">Time Management & Multitasking</div>
   </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <h3>Tools & Technologies</h3>
+  <div class="skills">
+    <div class="skill">Windows OS / macOS</div>
+    <div class="skill">Microsoft 365 (Outlook, Excel, Word)</div>
+    <div class="skill">Active Directory (Basic)</div>
+    <div class="skill">Remote Desktop Tools</div>
+    <div class="skill">HTML, CSS, JavaScript</div>
+    <div class="skill">Shopify Admin & Product Upload</div>
+    <div class="skill">CCTV & Network Configuration</div>
+    <div class="skill">Basic SQL / MySQL</div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <h3>Work Experience</h3>
+  <div class="experience">
+    <div class="job"><h4>Computer Instructor | 2015–2016</h4><p>AMA Computer Learning Center (ACLC)</p></div>
+    <div class="job"><h4>IT Technical Support Specialist | 2016–2021</h4><p>Banana Telecommunications, Inc.</p></div>
+    <div class="job"><h4>IT Technical Support Specialist | 2021–2023</h4><p>FTC Group of Companies</p></div>
+    <div class="job"><h4>Freelance Operational Data Entry | 2023–2025</h4><p>Remote / Freelance</p></div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+  <h3>Education</h3>
+  <div class="education">
+    <div class="edu">
+      <h4>Bachelor of Science in Information Technology</h4>
+      <p>ACLC – Major in Software Development</p>
+      <p>NCII Certified</p>
+    </div>
+  </div>
+</section>
+
+<!-- Media -->
+<section class="media-section">
+  <h3>Introduction Video</h3>
+  <video controls>
+    <source src="intro.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section class="media-section">
+  <h3>Workspace</h3>
+  <img src="WORKSPACE.jpg" alt="Workspace">
+</section>
+
+<section class="media-section">
+  <h3>Laptop Details</h3>
+  <img src="LAPTOP DETAILS.png" alt="Laptop Details">
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h3>Contact Me</h3>
+  <p>Email: <a href="mailto:philip.esparcia@gmail.com">philip.esparcia@gmail.com</a></p>
+  <p>OnlineJobs.ph: <a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank">View Profile</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Philip Cesar B. Esparcia. All rights reserved.
+</footer>
+
+</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
