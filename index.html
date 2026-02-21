@@ -4,295 +4,233 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Philip Cesar B. Esparcia | Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
   <style>
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --primary: #00d2ff;
+      --secondary: #3a7bd5;
+      --bg: #05070a;
+      --card: rgba(255, 255, 255, 0.03);
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #ffffff;
+      --text-dim: #94a3b8;
     }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.7;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      background-image: radial-gradient(circle at 10% 20%, rgba(58, 123, 213, 0.15) 0%, transparent 40%);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
+    .container { max-width: 1000px; margin: auto; padding: 0 20px; }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* LAYOUT */
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 0;
-    }
-
-    /* HEADER */
-    header {
+    /* OPTION 2: PORTRAIT EXECUTIVE PHOTO */
+    .hero-container {
+      padding-top: 140px;
       text-align: center;
-      padding: 2rem 0;
+      margin-bottom: 60px;
     }
 
-    .profile-pic {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
+    .hero-pic {
+      width: 400px; /* Professional Portrait Width */
+      height: 550px; /* Professional Portrait Height */
       object-fit: cover;
-      border: 3px solid #38bdf8;
-      margin-bottom: 1rem;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #38bdf8;
-    }
-
-    header h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #cbd5e1;
-      margin-top: 0.5rem;
-    }
-
-    /* SECTIONS */
-    section {
-      margin: 3rem 0;
-    }
-
-    section h3 {
-      font-size: 1.6rem;
-      color: #38bdf8;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #38bdf8;
+      border-radius: 30px;
+      border: 2px solid var(--primary);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 210, 255, 0.2);
+      margin-bottom: 30px;
+      transition: 0.5s ease;
       display: inline-block;
-      padding-bottom: 0.3rem;
+    }
+    .hero-pic:hover { transform: scale(1.02); box-shadow: 0 20px 60px rgba(0, 210, 255, 0.3); }
+
+    /* MOBILE RESPONSIVENESS FOR PHOTO */
+    @media (max-width: 500px) {
+      .hero-pic {
+        width: 100%;
+        height: auto;
+        max-height: 450px;
+      }
     }
 
-    .bio {
-      font-size: 1rem;
-      color: #d1d5db;
-      margin-top: 1rem;
+    /* BACK TO TOP BUTTON */
+    #backToTop {
+      position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+      background: var(--primary); color: #000; border-radius: 50%;
+      display: none; justify-content: center; align-items: center;
+      cursor: pointer; z-index: 3000; font-size: 20px; font-weight: 800;
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.4); border: none;
     }
 
-    /* CARD STYLES */
-    .skills,
-    .experience,
-    .education {
-      margin-top: 1rem;
+    /* NAVIGATION */
+    nav {
+      position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px);
+      padding: 12px 40px; border-radius: 50px; border: 1px solid var(--border);
+      z-index: 1000; display: flex; gap: 25px;
     }
+    nav a { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+    nav a:hover { color: var(--primary); }
 
-    .skill,
-    .job,
-    .edu {
-      background-color: #1e293b;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      transition: all 0.3s ease;
-    }
+    header h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); font-weight: 800; color: #fff; margin-bottom: 10px; }
+    header h2 { font-size: 1.4rem; font-weight: 400; color: var(--primary); margin-bottom: 20px; }
 
-    .skill:hover,
-    .job:hover,
-    .edu:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
+    section { margin-bottom: 80px; }
+    h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
+    h3::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1rem;
-    }
+    .about-text { font-size: 1.15rem; color: var(--text-dim); max-width: 850px; margin: 0 auto; line-height: 1.8; text-align: center; }
 
-    .job h4,
-    .edu h4 {
-      color: #38bdf8;
-      margin-bottom: 0.3rem;
-      font-size: 1.05rem;
-    }
+    .info-card { background: var(--card); border: 1px solid var(--border); padding: 25px; border-radius: 20px; margin-bottom: 20px; }
+    .date-tag { font-size: 0.85rem; color: var(--text-dim); font-weight: 600; }
+
+    /* CERTIFICATE GRID */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+    .cert-item { cursor: pointer; background: var(--card); border: 1px solid var(--border); border-radius: 15px; padding: 12px; transition: 0.3s; text-align: center; }
+    .cert-item img { width: 100%; border-radius: 8px; display: block; }
+    .cert-item:hover { border-color: var(--primary); transform: translateY(-5px); }
+
+    /* MODAL */
+    .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); justify-content: center; align-items: center; }
+    .modal-content { max-width: 90%; max-height: 85%; border-radius: 10px; }
 
     /* MEDIA */
-    .media-section {
-      background-color: #1e293b;
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-    }
+    .media-block { background: var(--card); border: 1px solid var(--border); border-radius: 30px; padding: 30px; margin-bottom: 40px; }
+    video, .full-img { width: 100%; border-radius: 20px; display: block; }
 
-    video,
-    img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 1rem;
-    }
+    /* CONTACT CARD */
+    .contact-card { background: linear-gradient(145deg, rgba(0, 210, 255, 0.05), rgba(58, 123, 213, 0.05)); border: 1px solid var(--border); padding: 60px 20px; text-align: center; border-radius: 40px; margin-bottom: 80px; }
+    .contact-btn { display: inline-block; background: var(--primary); color: #000; padding: 15px 40px; border-radius: 12px; text-decoration: none; font-weight: 800; margin: 20px 0; }
 
-    /* CONTACT */
-    #contact p {
-      margin: 0.5rem 0;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      padding: 2rem 0;
-      border-top: 1px solid #334155;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .profile-pic {
-        width: 160px;
-        height: 160px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .profile-pic {
-        width: 140px;
-        height: 140px;
-      }
-    }
+    footer { text-align: center; padding: 60px 0; color: var(--text-dim); border-top: 1px solid var(--border); }
   </style>
 </head>
 
 <body>
 
-<div class="container">
+<button id="backToTop" onclick="scrollToTop()">↑</button>
 
-  <!-- HEADER -->
-  <header>
-    <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="profile-pic">
+<nav>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#certs">Certificates</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+  
+  <header class="hero-container">
+    <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="hero-pic">
     <h1>Philip Cesar B. Esparcia</h1>
     <h2>Freelance Virtual Assistant & IT Support Professional</h2>
-    <a href="PHILIP CESAR ESPARCIA RESUME.pdf" download>Download Resume</a>
   </header>
 
-  <!-- ABOUT -->
   <section id="about">
     <h3>About Me</h3>
-    <p class="bio">
-      Experienced IT professional with over 10 years of expertise in technical support,
-      system administration, and virtual assistance. I specialize in troubleshooting,
+    <div class="about-text">
+      Experienced IT professional with over 10 years of expertise in technical support, 
+      system administration, and virtual assistance. I specialize in troubleshooting, 
       system optimization, and providing reliable technical solutions to support business growth.
-    </p>
-  </section>
-
-  <!-- CORE SKILLS -->
-  <section id="core-skills">
-    <h3>Core Skills</h3>
-    <div class="skills">
-      <div class="skill">Technical Support (Tier 1–2)</div>
-      <div class="skill">Remote Troubleshooting</div>
-      <div class="skill">System Administration</div>
-      <div class="skill">Customer Support & Ticket Handling</div>
-      <div class="skill">Network Setup & Maintenance</div>
-      <div class="skill">Hardware & Software Installation</div>
-      <div class="skill">Data Entry & Documentation</div>
-      <div class="skill">Time Management & Multitasking</div>
     </div>
   </section>
 
-  <!-- TOOLS -->
-  <section id="tools">
-    <h3>Tools & Technologies</h3>
-    <div class="skills">
-      <div class="skill">Windows OS / macOS</div>
-      <div class="skill">Microsoft 365 (Outlook, Excel, Word)</div>
-      <div class="skill">Active Directory (Basic)</div>
-      <div class="skill">Remote Desktop Tools</div>
-      <div class="skill">HTML, CSS, JavaScript</div>
-      <div class="skill">Shopify Admin</div>
-      <div class="skill">CCTV & Network Setup</div>
-      <div class="skill">Basic SQL / MySQL</div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
   <section id="experience">
     <h3>Work Experience</h3>
-    <div class="experience">
-      <div class="job">
-        <h4>Computer Instructor | 2015–2016</h4>
-        <p>AMA Computer Learning Center (ACLC)</p>
-      </div>
-
-      <div class="job">
-        <h4>IT Technical Support Specialist | 2016–2021</h4>
-        <p>Banana Telecommunications, Inc.</p>
-      </div>
-
-      <div class="job">
-        <h4>IT Technical Support Specialist | 2021–2023</h4>
-        <p>FTC Group of Companies</p>
-      </div>
-
-      <div class="job">
-        <h4>Freelance Operational Data Entry | 2023–2025</h4>
-        <p>Remote / Freelance</p>
-      </div>
+    <div class="info-card">
+      <span class="date-tag">2024 — 2025</span>
+      <h4>Business Owner / Entrepreneur</h4>
+      <p>Self-Employed / Business Operations</p>
+    </div>
+    <div class="info-card">
+      <span class="date-tag">2023 — 2025</span>
+      <h4>Freelance Operational Data Entry</h4>
+      <p>Remote / Freelance</p>
+    </div>
+    <div class="info-card">
+      <span class="date-tag">2021 — 2023</span>
+      <h4>IT Technical Support Specialist</h4>
+      <p>FTC Group of Companies</p>
+    </div>
+    <div class="info-card">
+      <span class="date-tag">2016 — 2021</span>
+      <h4>IT Technical Support Specialist</h4>
+      <p>Banana Telecommunications, Inc.</p>
+    </div>
+    <div class="info-card">
+      <span class="date-tag">2016 — 2016</span>
+      <h4>Sales Representative</h4>
+      <p>Banana Telecommunications, Inc.</p>
+    </div>
+    <div class="info-card">
+      <span class="date-tag">2015 — 2016</span>
+      <h4>Computer Instructor</h4>
+      <p>AMA Computer Learning Center (ACLC)</p>
+    </div>
+    <div class="info-card">
+      <span class="date-tag">2015 — 2016</span>
+      <h4>Staff Member</h4>
+      <p>Chowking Toril</p>
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section id="education">
-    <h3>Education</h3>
-    <div class="education">
-      <div class="edu">
-        <h4>Bachelor of Science in Information Technology</h4>
-        <p>ACLC – Major in Software Development</p>
-        <p>NCII Certified</p>
-      </div>
+  <section id="certs">
+    <h3>Professional Certificates</h3>
+    <div class="cert-grid">
+      <div class="cert-item" onclick="openModal('cert1.JPEG')"><img src="cert1.JPEG" alt="Cert 1"></div>
+      <div class="cert-item" onclick="openModal('cert2.JPEG')"><img src="cert2.JPEG" alt="Cert 2"></div>
+      <div class="cert-item" onclick="openModal('cert3.JPEG')"><img src="cert3.JPEG" alt="Cert 3"></div>
+      <div class="cert-item" onclick="openModal('cert4.JPEG')"><img src="cert4.JPEG" alt="Cert 4"></div>
+      <div class="cert-item" onclick="openModal('cert5.JPEG')"><img src="cert5.JPEG" alt="Cert 5"></div>
     </div>
   </section>
 
-  <!-- MEDIA -->
-  <section class="media-section">
-    <h3>Introduction Video</h3>
-    <video controls>
-      <source src="intro.mp4" type="video/mp4">
-    </video>
+  <div id="certModal" class="modal" onclick="closeModal()">
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <section id="media">
+    <h3>Environment & Showcase</h3>
+    <div class="media-block">
+      <p style="margin-bottom:15px;">Introduction Video</p>
+      <video controls><source src="intro.mp4" type="video/mp4"></video>
+    </div>
+    <div class="media-block">
+      <p style="margin-bottom:15px;">Workspace</p>
+      <img src="WORKSPACE.jpg" alt="Workspace" class="full-img">
+    </div>
+    <div class="media-block">
+      <p style="margin-bottom:15px;">Laptop Specifications</p>
+      <img src="LAPTOP DETAILS.png" alt="Laptop Details" class="full-img">
+    </div>
   </section>
 
-  <section class="media-section">
-    <h3>Workspace</h3>
-    <img src="WORKSPACE.jpg" alt="Workspace">
+  <section id="contact" class="contact-card">
+    <h2>Let's Work Together</h2>
+    <a href="mailto:philip.esparcia@gmail.com" class="contact-btn">philip.esparcia@gmail.com</a>
+    <div style="margin-top: 10px;">
+      <a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank" style="color: var(--primary); text-decoration: none;">OnlineJobs.ph Profile →</a>
+    </div>
   </section>
 
-  <section class="media-section">
-    <h3>Laptop Details</h3>
-    <img src="LAPTOP DETAILS.png" alt="Laptop Details">
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h3>Contact Me</h3>
-    <p>Email: <a href="mailto:philip.esparcia@gmail.com">philip.esparcia@gmail.com</a></p>
-    <p>OnlineJobs.ph: 
-      <a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank">
-        View Profile
-      </a>
-    </p>
-  </section>
-
-  <footer>
-    &copy; 2025 Philip Cesar B. Esparcia. All rights reserved.
-  </footer>
+  <footer>&copy; 2026 Philip Cesar B. Esparcia</footer>
 
 </div>
+
+<script>
+  function openModal(imgSrc) { document.getElementById("certModal").style.display = "flex"; document.getElementById("modalImg").src = imgSrc; }
+  function closeModal() { document.getElementById("certModal").style.display = "none"; }
+  const btt = document.getElementById("backToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) { btt.style.display = "flex"; } else { btt.style.display = "none"; }
+  };
+  function scrollToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
+</script>
+
 </body>
 </html>
