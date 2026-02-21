@@ -30,7 +30,7 @@
 
     .container { max-width: 1000px; margin: auto; padding: 0 20px; }
 
-    /* OPTION 2: PORTRAIT EXECUTIVE PHOTO */
+    /* PORTRAIT EXECUTIVE PHOTO */
     .hero-container {
       padding-top: 140px;
       text-align: center;
@@ -38,8 +38,8 @@
     }
 
     .hero-pic {
-      width: 400px; /* Professional Portrait Width */
-      height: 550px; /* Professional Portrait Height */
+      width: 400px; 
+      height: 550px; 
       object-fit: cover;
       border-radius: 30px;
       border: 2px solid var(--primary);
@@ -48,15 +48,9 @@
       transition: 0.5s ease;
       display: inline-block;
     }
-    .hero-pic:hover { transform: scale(1.02); box-shadow: 0 20px 60px rgba(0, 210, 255, 0.3); }
 
-    /* MOBILE RESPONSIVENESS FOR PHOTO */
     @media (max-width: 500px) {
-      .hero-pic {
-        width: 100%;
-        height: auto;
-        max-height: 450px;
-      }
+      .hero-pic { width: 100%; height: auto; max-height: 450px; }
     }
 
     /* BACK TO TOP BUTTON */
@@ -182,11 +176,11 @@
   <section id="certs">
     <h3>Professional Certificates</h3>
     <div class="cert-grid">
-      <div class="cert-item" onclick="openModal('cert1.JPEG')"><img src="cert1.JPEG" alt="Cert 1"></div>
-      <div class="cert-item" onclick="openModal('cert2.JPEG')"><img src="cert2.JPEG" alt="Cert 2"></div>
-      <div class="cert-item" onclick="openModal('cert3.JPEG')"><img src="cert3.JPEG" alt="Cert 3"></div>
-      <div class="cert-item" onclick="openModal('cert4.JPEG')"><img src="cert4.JPEG" alt="Cert 4"></div>
-      <div class="cert-item" onclick="openModal('cert5.JPEG')"><img src="cert5.JPEG" alt="Cert 5"></div>
+      <div class="cert-item" onclick="openModal('cert1.jpeg')"><img src="cert1.jpeg" alt="Cert 1"></div>
+      <div class="cert-item" onclick="openModal('cert2.jpeg')"><img src="cert2.jpeg" alt="Cert 2"></div>
+      <div class="cert-item" onclick="openModal('cert3.jpeg')"><img src="cert3.jpeg" alt="Cert 3"></div>
+      <div class="cert-item" onclick="openModal('cert4.jpeg')"><img src="cert4.jpeg" alt="Cert 4"></div>
+      <div class="cert-item" onclick="openModal('cert5.jpeg')"><img src="cert5.jpeg" alt="Cert 5"></div>
     </div>
   </section>
 
