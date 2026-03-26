@@ -39,16 +39,21 @@
     nav a { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
     nav a:hover { color: var(--primary); }
 
-    /* HERO */
+    /* HERO - MODIFIED FOR PROFESSIONAL LOOK */
     .hero-container { padding-top: 140px; text-align: center; margin-bottom: 60px; }
     .hero-pic {
-      width: 400px; height: 550px; object-fit: cover; border-radius: 30px;
-      border: 2px solid var(--primary); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      margin-bottom: 30px; display: inline-block;
+      width: 220px; /* Reduced from 400px */
+      height: 220px; /* Uniform height for a perfect circle */
+      object-fit: cover; 
+      border-radius: 50%; /* Circular for a professional headshot look */
+      border: 3px solid var(--primary); 
+      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+      margin-bottom: 25px; 
+      display: inline-block;
     }
 
-    header h1 { font-size: 3rem; font-weight: 800; color: #fff; }
-    header h2 { font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; }
+    header h1 { font-size: 3rem; font-weight: 800; color: #fff; letter-spacing: -1px; }
+    header h2 { font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; font-weight: 400; }
 
     section { margin-bottom: 80px; }
     h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
