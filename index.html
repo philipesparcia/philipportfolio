@@ -3,236 +3,579 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Philip Cesar B. Esparcia | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <title>Philip Cesar B. Esparcia | IT & Virtual Assistant Professional</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --primary: #00d2ff;
-      --bg: #05070a;
-      --card-bg: #0f172a; 
-      --border: rgba(255, 255, 255, 0.05);
-      --text: #ffffff;
-      --text-dim: #94a3b8;
+      --accent: #0ea5e9;
+      --accent-dark: #0284c7;
+      --gold: #f59e0b;
+      --bg: #09090b;
+      --bg2: #111113;
+      --bg3: #18181b;
+      --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(14,165,233,0.4);
+      --text: #f4f4f5;
+      --muted: #71717a;
+      --muted2: #a1a1aa;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg);
-      background-image: radial-gradient(circle at 10% 20%, rgba(58, 123, 213, 0.1) 0%, transparent 40%);
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+    /* ── NOISE TEXTURE ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+    }
 
-    /* NAV */
+    /* ── GLOW BLOB ── */
+    .glow {
+      position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 600px; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(14,165,233,0.12) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .container { max-width: 1050px; margin: auto; padding: 0 28px; position: relative; z-index: 1; }
+
+    /* ── NAV ── */
     nav {
-      position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-      background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px);
-      padding: 12px 40px; border-radius: 50px; border: 1px solid var(--border);
-      z-index: 1000; display: flex; gap: 25px;
+      position: fixed; top: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 40px;
+      background: rgba(9,9,11,0.75); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000; transition: 0.3s;
     }
-    nav a { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
-    nav a:hover { color: var(--primary); }
-
-    /* HERO - MODIFIED FOR PROFESSIONAL LOOK */
-    .hero-container { padding-top: 140px; text-align: center; margin-bottom: 60px; }
-    .hero-pic {
-      width: 220px; /* Reduced from 400px */
-      height: 220px; /* Uniform height for a perfect circle */
-      object-fit: cover; 
-      border-radius: 50%; /* Circular for a professional headshot look */
-      border: 3px solid var(--primary); 
-      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
-      margin-bottom: 25px; 
-      display: inline-block;
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--text); letter-spacing: 0.02em; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { color: var(--muted2); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: 0.25s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent); color: #fff; padding: 9px 22px;
+      border-radius: 8px; font-weight: 600; font-size: 0.85rem; text-decoration: none;
+      transition: 0.25s; letter-spacing: 0.03em;
     }
+    .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
-    header h1 { font-size: 3rem; font-weight: 800; color: #fff; letter-spacing: -1px; }
-    header h2 { font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; font-weight: 400; }
-
-    section { margin-bottom: 80px; }
-    h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
-    h3::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-
-    /* EXPERTISE GRID */
-    .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .standard-card { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 16px; }
-    .standard-card h4 { color: var(--primary); margin-bottom: 12px; font-size: 1.15rem; }
-    .standard-card p { color: var(--text-dim); font-size: 0.95rem; }
-
-    /* WORK EXPERIENCE CARDS */
-    .experience-list { display: flex; flex-direction: column; gap: 16px; }
-    .exp-card {
-      background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 16px; transition: 0.3s;
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 0 80px;
     }
-    .exp-card:hover { transform: translateX(8px); border-color: var(--primary); }
-    .exp-date { color: var(--text-dim); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: block; }
-    .exp-role { color: #fff; font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; display: block; }
-    .exp-company { color: var(--text-dim); font-size: 1rem; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; }
 
-    /* MEDIA & SHOWCASE */
-    .media-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 25px; margin-bottom: 30px; }
-    .media-block span { display: block; margin-bottom: 15px; font-weight: 600; color: var(--primary); }
-    video, .full-img { width: 100%; border-radius: 12px; display: block; }
-
-    /* CERTIFICATES */
-    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
-    .cert-item { cursor: pointer; background: var(--card-bg); border: 1px solid var(--border); border-radius: 15px; padding: 12px; transition: 0.3s; }
-    .cert-item img { width: 100%; border-radius: 8px; }
-
-    /* CONTACT */
-    .contact-card { background: linear-gradient(145deg, rgba(0, 210, 255, 0.05), #0f172a); border: 1px solid var(--border); padding: 60px 20px; text-align: center; border-radius: 40px; }
-    .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
-    
-    .contact-btn { 
-      display: inline-block; background: var(--primary); color: #000; padding: 15px 35px; 
-      border-radius: 12px; text-decoration: none; font-weight: 800; transition: 0.3s;
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.25);
+      color: var(--accent); padding: 6px 16px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 24px;
     }
-    .cv-btn { 
-      display: inline-block; background: transparent; color: var(--primary); border: 2px solid var(--primary); 
-      padding: 13px 35px; border-radius: 12px; text-decoration: none; font-weight: 800; transition: 0.3s;
-    }
-    .contact-btn:hover { opacity: 0.9; transform: translateY(-3px); }
-    .cv-btn:hover { background: var(--primary); color: #000; transform: translateY(-3px); }
+    .hero-tag::before { content: ''; width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
 
-    #backToTop { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--primary); color: #000; border-radius: 50%; display: none; justify-content: center; align-items: center; cursor: pointer; z-index: 3000; font-weight: 800; border: none; }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 4rem; line-height: 1.1; font-weight: 400;
+      margin-bottom: 20px; letter-spacing: -0.02em;
+    }
+    .hero h1 em { color: var(--accent); font-style: italic; }
+    .hero-sub { font-size: 1.1rem; color: var(--muted2); max-width: 520px; margin-bottom: 36px; line-height: 1.8; }
+
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--accent); color: #fff; padding: 14px 32px;
+      border-radius: 10px; text-decoration: none; font-weight: 600;
+      font-size: 0.95rem; transition: 0.25s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(14,165,233,0.3); }
+    .btn-outline {
+      background: transparent; color: var(--text); padding: 13px 30px;
+      border-radius: 10px; border: 1px solid var(--border-hover); text-decoration: none;
+      font-weight: 600; font-size: 0.95rem; transition: 0.25s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    .hero-stats { display: flex; gap: 32px; }
+    .stat { }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--text); }
+    .stat-num span { color: var(--accent); }
+    .stat-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ── HERO PHOTO CARD ── */
+    .hero-photo-wrap { position: relative; }
+    .hero-photo-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 24px; padding: 24px; position: relative; overflow: hidden;
+    }
+    .hero-photo-card::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 200px; height: 200px; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-photo-card img {
+      width: 100%; border-radius: 16px;
+      aspect-ratio: 4/5; object-fit: cover; object-position: top center;
+      display: block;
+    }
+    .hero-badge {
+      position: absolute; bottom: 36px; left: 36px;
+      background: rgba(9,9,11,0.85); backdrop-filter: blur(12px);
+      border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px;
+    }
+    .hero-badge p { font-size: 0.78rem; color: var(--muted2); }
+    .hero-badge strong { display: block; font-size: 0.95rem; color: var(--text); }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 80px 0; }
+    .section-label {
+      display: inline-block; color: var(--accent); font-size: 0.78rem;
+      font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif; font-size: 2.5rem; font-weight: 400;
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .section-sub { color: var(--muted2); font-size: 1rem; max-width: 560px; }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ── WHAT I DO ── */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 48px; }
+    .service-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px; transition: 0.3s; position: relative; overflow: hidden;
+    }
+    .service-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0; transition: 0.3s;
+    }
+    .service-card:hover::after { opacity: 1; }
+    .service-icon {
+      width: 48px; height: 48px; background: rgba(14,165,233,0.1);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 18px;
+    }
+    .service-card h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+    .service-card p { color: var(--muted2); font-size: 0.9rem; line-height: 1.7; }
+
+    /* ── EXPERIENCE TIMELINE ── */
+    .timeline { position: relative; margin-top: 48px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { padding-left: 40px; padding-bottom: 40px; position: relative; }
+    .tl-item::before {
+      content: ''; position: absolute; left: -5px; top: 4px;
+      width: 11px; height: 11px; background: var(--accent);
+      border-radius: 50%; box-shadow: 0 0 0 4px rgba(14,165,233,0.2);
+    }
+    .tl-date { font-size: 0.8rem; color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+    .tl-role { font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .tl-company { font-size: 0.9rem; color: var(--muted2); }
+    .tl-desc { font-size: 0.88rem; color: var(--muted); margin-top: 8px; line-height: 1.7; }
+
+    /* ── SKILLS ── */
+    .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+    .skill-group h4 { font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 700; }
+    .skill-pill {
+      display: inline-block; background: var(--bg3); border: 1px solid var(--border);
+      color: var(--muted2); padding: 6px 14px; border-radius: 50px; font-size: 0.83rem;
+      margin: 4px; transition: 0.25s;
+    }
+    .skill-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── TOOLS ── */
+    .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .tool-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px; transition: 0.25s;
+    }
+    .tool-card:hover { border-color: var(--border-hover); }
+    .tool-label { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 12px; }
+    .tool-card p { color: var(--muted2); font-size: 0.88rem; line-height: 1.7; }
+
+    /* ── CERTS ── */
+    .certs-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 48px; }
+    .cert-item {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden; cursor: pointer; transition: 0.3s;
+      aspect-ratio: 4/3; position: relative;
+    }
+    .cert-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+    .cert-item:hover { border-color: var(--accent); transform: scale(1.03); }
+    .cert-item:hover img { transform: scale(1.05); }
+    .cert-overlay {
+      position: absolute; inset: 0; background: rgba(14,165,233,0.8);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: 0.3s; font-size: 1.4rem;
+    }
+    .cert-item:hover .cert-overlay { opacity: 1; }
+
+    /* ── SHOWCASE ── */
+    .showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+    .showcase-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 20px; overflow: hidden; transition: 0.3s;
+    }
+    .showcase-card:hover { border-color: var(--border-hover); }
+    .showcase-card.full { grid-column: 1 / -1; }
+    .showcase-label { padding: 16px 20px 0; font-size: 0.78rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+    .showcase-title { padding: 6px 20px 16px; font-weight: 600; font-size: 0.95rem; }
+    .showcase-card video, .showcase-card img { width: 100%; display: block; }
+
+    /* ── EDUCATION ── */
+    .edu-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 16px 16px 0; padding: 28px 32px; margin-top: 32px;
+      display: flex; align-items: center; gap: 24px;
+    }
+    .edu-icon { font-size: 2rem; }
+    .edu-deg { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .edu-school { font-size: 0.9rem; color: var(--muted2); }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 32px; padding: 72px 60px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .contact-section::before {
+      content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 300px; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(14,165,233,0.1) 0%, transparent 70%);
+    }
+    .contact-section h2 {
+      font-family: 'DM Serif Display', serif; font-size: 3rem;
+      font-weight: 400; margin-bottom: 16px; position: relative;
+    }
+    .contact-section p { color: var(--muted2); font-size: 1.05rem; margin-bottom: 36px; position: relative; }
+    .contact-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; position: relative; }
+    .contact-meta { margin-top: 32px; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+    .contact-link { color: var(--muted2); text-decoration: none; font-size: 0.88rem; transition: 0.25s; display: flex; align-items: center; gap: 6px; }
+    .contact-link:hover { color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+
+    /* ── BACK TO TOP ── */
+    #btt {
+      position: fixed; bottom: 28px; right: 28px; width: 46px; height: 46px;
+      background: var(--accent); color: #fff; border: none; border-radius: 50%;
+      font-size: 1.1rem; cursor: pointer; display: none; align-items: center;
+      justify-content: center; z-index: 999; transition: 0.25s;
+      box-shadow: 0 4px 16px rgba(14,165,233,0.4);
+    }
+    #btt:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+    /* ── MODAL ── */
+    .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 5000; display: flex; align-items: center; justify-content: center; cursor: zoom-out; }
+    .modal img { max-width: 90vw; max-height: 88vh; border-radius: 12px; }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo-wrap { display: none; }
+      .hero h1 { font-size: 2.8rem; }
+      .skills-layout { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: 1fr 1fr; }
+      .certs-grid { grid-template-columns: repeat(3, 1fr); }
+      .showcase-grid { grid-template-columns: 1fr; }
+      .contact-section { padding: 48px 24px; }
+      nav { padding: 14px 20px; }
+      .nav-cta { display: none; }
+    }
   </style>
 </head>
-
 <body>
 
-<button id="backToTop" onclick="scrollToTop()">↑</button>
+<div class="glow"></div>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+<!-- NAV -->
 <nav>
-  <a href="#about">About</a>
-  <a href="#expertise">Expertise</a>
-  <a href="#experience">History</a>
-  <a href="#showcase">Showcase</a>
+  <div class="nav-logo">Philip<span>.</span>Esparcia</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#showcase">Work</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="mailto:philip.esparcia@gmail.com" class="nav-cta">Hire Me</a>
 </nav>
 
 <div class="container">
-  
-  <header class="hero-container">
-    <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia" class="hero-pic">
-    <h1>Philip Cesar B. Esparcia</h1>
-    <h2>Freelance Virtual Assistant & IT Support Professional</h2>
-  </header>
 
-  <section id="about">
-    <h3>About Me</h3>
-    <p style="text-align:center; color: var(--text-dim); max-width: 850px; margin: 0 auto; font-size: 1.1rem;">
-      Experienced IT professional with over 10 years of expertise in technical support, 
-      system administration, and virtual assistance. I specialize in troubleshooting, 
-      system optimization, and providing reliable technical solutions.
-    </p>
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">Available for new projects</div>
+        <h1>IT & Virtual<br>Assistant <em>Expert</em></h1>
+        <p class="hero-sub">
+          10+ years delivering rock-solid technical support, system administration, and 
+          virtual assistance — helping businesses run smoother and stay productive.
+        </p>
+        <div class="hero-btns">
+          <a href="mailto:philip.esparcia@gmail.com" class="btn-primary">
+            ✉ Let's Work Together
+          </a>
+          <a href="PHILIP%20CESAR%20ESPARCIA%20RESUME.pdf" download class="btn-outline">
+            ↓ Download CV
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">10<span>+</span></div>
+            <div class="stat-label">Years Exp.</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">6<span>+</span></div>
+            <div class="stat-label">Companies</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Certificates</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-card">
+          <img src="PHILIPPIC.jpg" alt="Philip Cesar B. Esparcia">
+          <div class="hero-badge">
+            <p>Based in</p>
+            <strong>Davao, Philippines 🇵🇭</strong>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="expertise">
-    <h3>Core Expertise</h3>
-    <div class="grid-layout">
-      <div class="standard-card">
+  <hr class="divider">
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-label">What I Do</div>
+    <h2 class="section-title">Core Expertise</h2>
+    <p class="section-sub">From hardware troubleshooting to seamless remote operations — I bring the full stack of IT and VA skills your business needs.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🖥️</div>
         <h4>IT Technical Support</h4>
-        <p>Hardware/Software troubleshooting, network maintenance, and system administration.</p>
+        <p>Hardware & software troubleshooting, network maintenance, system administration, and remote support to keep your operations running smoothly.</p>
       </div>
-
-      <div class="standard-card">
+      <div class="service-card">
+        <div class="service-icon">🗂️</div>
         <h4>Virtual Assistance</h4>
-        <p>Data entry, email management, scheduling, and operational support.</p>
+        <p>Data entry, email management, calendar scheduling, document handling, and operational support — so you can focus on what matters most.</p>
       </div>
-      <div class="standard-card">
-        <h4>Customer Service</h4>
-        <p>Expert in client relations, problem resolution, and communication skills.</p>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h4>Network & Systems Admin</h4>
+        <p>Windows Server, Active Directory, network configuration, and system optimization for businesses that need reliable infrastructure.</p>
       </div>
-      <div class="standard-card">
-        <h4>Business Operations</h4>
-        <p>Managing workflows, entrepreneurship, and operational efficiency.</p>
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <h4>Customer & Client Support</h4>
+        <p>Professional client communication, ticket resolution, CRM management, and service desk operations with a customer-first approach.</p>
       </div>
     </div>
   </section>
 
+  <hr class="divider">
+
+  <!-- TOOLS -->
   <section id="tools">
-    <h3>Tools & Technologies</h3>
-    <div class="grid-layout">
-      <div class="standard-card"><strong>Technical:</strong> Windows Server, Active Directory, Networking</div>
-      <div class="standard-card"><strong>Productivity:</strong> Office 365, Google Workspace, Canva</div>
-      <div class="standard-card"><strong>Virtual Support:</strong> CRM Management, Data Entry Tools</div>
+    <div class="section-label">Toolkit</div>
+    <h2 class="section-title">Tools & Technologies</h2>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-label">Technical</div>
+        <p>Windows Server · Active Directory · Networking · Hardware Repair · Remote Desktop</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-label">Productivity</div>
+        <p>Microsoft 365 · Google Workspace · Canva · Email Management · Scheduling Tools</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-label">VA & Operations</div>
+        <p>CRM Systems · Data Entry Tools · Spreadsheets · Online Collaboration Platforms</p>
+      </div>
     </div>
   </section>
 
-  <section id="education">
-    <h3>Education</h3>
-    <div class="standard-card" style="border-left: 4px solid var(--primary); border-radius: 0 16px 16px 0;">
-      <span style="color: #fff; font-size: 1.2rem; font-weight: 700; display: block;">Bachelor of Science in Information Technology (BSIT)</span>
-      <span style="color: var(--text-dim);">AMA Computer Learning Center (ACLC)</span>
-    </div>
-  </section>
+  <hr class="divider">
 
+  <!-- EXPERIENCE -->
   <section id="experience">
-    <h3>Work Experience</h3>
-    <div class="experience-list">
-     
-      <div class="exp-card"><span class="exp-date">2023 — 2025</span><span class="exp-role">Freelance Operational Data Entry</span><span class="exp-company">Remote / Freelance</span></div>
-      <div class="exp-card"><span class="exp-date">2021 — 2023</span><span class="exp-role">IT Assistant Head Technical Support Specialist</span><span class="exp-company">FTC Group of Companies</span></div>
-      <div class="exp-card"><span class="exp-date">2016 — 2021</span><span class="exp-role">IT Technical Support Specialist</span><span class="exp-company">Banana Telecommunications, Inc.</span></div>
-      <div class="exp-card"><span class="exp-date">2016 — 2016</span><span class="exp-role">Sales Representative</span><span class="exp-company">Banana Telecommunications, Inc.</span></div>
-      <div class="exp-card"><span class="exp-date">2015 — 2016</span><span class="exp-role">Computer Instructor</span><span class="exp-company">AMA Computer Learning Center (ACLC)</span></div>
-      <div class="exp-card"><span class="exp-date">2015 — 2016</span><span class="exp-role">Staff Member</span><span class="exp-company">Chowking Toril</span></div>
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-sub">A decade-long track record across telecommunications, IT, and remote work.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2023 — 2025</div>
+        <div class="tl-role">Freelance Operational Data Entry Specialist</div>
+        <div class="tl-company">Remote / Freelance</div>
+        <div class="tl-desc">Handled data entry, document management, and remote operational support for clients across various industries.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2021 — 2023</div>
+        <div class="tl-role">IT Assistant Head / Technical Support Specialist</div>
+        <div class="tl-company">FTC Group of Companies</div>
+        <div class="tl-desc">Led technical support operations, managed systems infrastructure, and supervised IT team for a multi-branch organization.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2016 — 2021</div>
+        <div class="tl-role">IT Technical Support Specialist</div>
+        <div class="tl-company">Banana Telecommunications, Inc.</div>
+        <div class="tl-desc">Provided end-to-end IT support for telecom operations — network troubleshooting, hardware maintenance, and client-facing technical assistance.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2015 — 2016</div>
+        <div class="tl-role">Computer Instructor</div>
+        <div class="tl-company">AMA Computer Learning Center (ACLC)</div>
+        <div class="tl-desc">Taught computer fundamentals and IT-related subjects, developing practical curriculum for working professionals and students.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2015 — 2016</div>
+        <div class="tl-role">Sales Representative</div>
+        <div class="tl-company">Banana Telecommunications, Inc.</div>
+        <div class="tl-desc">Managed client acquisition and product presentations in the telecom sector.</div>
+      </div>
     </div>
   </section>
 
+  <hr class="divider">
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-label">Education</div>
+    <h2 class="section-title">Academic Background</h2>
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-deg">Bachelor of Science in Information Technology (BSIT)</div>
+        <div class="edu-school">AMA Computer Learning Center (ACLC) · Davao, Philippines</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CERTS -->
   <section id="certs">
-    <h3>Professional Certificates</h3>
-    <div class="cert-grid">
-      <div class="cert-item" onclick="openModal('cert1.jpeg')"><img src="cert1.jpeg" alt="Cert 1"></div>
-      <div class="cert-item" onclick="openModal('cert2.jpeg')"><img src="cert2.jpeg" alt="Cert 2"></div>
-      <div class="cert-item" onclick="openModal('cert3.jpeg')"><img src="cert3.jpeg" alt="Cert 3"></div>
-      <div class="cert-item" onclick="openModal('cert4.jpeg')"><img src="cert4.jpeg" alt="Cert 4"></div>
-      <div class="cert-item" onclick="openModal('cert5.jpeg')"><img src="cert5.jpeg" alt="Cert 5"></div>
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Professional Certificates</h2>
+    <p class="section-sub">Click any certificate to view it in full.</p>
+    <div class="certs-grid">
+      <div class="cert-item" onclick="showModal('cert1.jpeg')">
+        <img src="cert1.jpeg" alt="Certificate 1">
+        <div class="cert-overlay">🔍</div>
+      </div>
+      <div class="cert-item" onclick="showModal('cert2.jpeg')">
+        <img src="cert2.jpeg" alt="Certificate 2">
+        <div class="cert-overlay">🔍</div>
+      </div>
+      <div class="cert-item" onclick="showModal('cert3.jpeg')">
+        <img src="cert3.jpeg" alt="Certificate 3">
+        <div class="cert-overlay">🔍</div>
+      </div>
+      <div class="cert-item" onclick="showModal('cert4.jpeg')">
+        <img src="cert4.jpeg" alt="Certificate 4">
+        <div class="cert-overlay">🔍</div>
+      </div>
+      <div class="cert-item" onclick="showModal('cert5.jpeg')">
+        <img src="cert5.jpeg" alt="Certificate 5">
+        <div class="cert-overlay">🔍</div>
+      </div>
     </div>
   </section>
 
+  <hr class="divider">
+
+  <!-- SHOWCASE -->
   <section id="showcase">
-    <h3>Showcase & Equipment</h3>
-    <div class="media-block"><span>Introduction Video</span><video controls><source src="intro.mp4" type="video/mp4"></video></div>
-    <div class="media-block"><span>Workspace Setup</span><img src="WORKSPACE.jpg" alt="Workspace" class="full-img"></div>
-    <div class="media-block"><span>Laptop Specifications</span><img src="LAPTOP DETAILS.png" alt="Laptop Details" class="full-img"></div>
-  </section>
-
-  <section id="contact" class="contact-card">
-    <h2>Let's Work Together</h2>
-    <div class="btn-group">
-      <a href="mailto:philip.esparcia@gmail.com" class="contact-btn">Email Me</a>
-      <a href="PHILIP%20CESAR%20ESPARCIA%20RESUME.pdf" download class="cv-btn">Download CV</a>
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Showcase & Setup</h2>
+    <p class="section-sub">A look at my workspace, equipment, and introduction video.</p>
+    <div class="showcase-grid">
+      <div class="showcase-card full">
+        <div class="showcase-label">Introduction</div>
+        <div class="showcase-title">Watch My Intro Video</div>
+        <video controls>
+          <source src="intro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-label">Environment</div>
+        <div class="showcase-title">My Workspace Setup</div>
+        <img src="WORKSPACE.jpg" alt="Workspace">
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-label">Equipment</div>
+        <div class="showcase-title">Laptop Specifications</div>
+        <img src="LAPTOP DETAILS.png" alt="Laptop Details">
+      </div>
     </div>
-    <p style="margin-top:25px;">
-        <a href="mailto:philip.esparcia@gmail.com" style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem;">philip.esparcia@gmail.com</a>
-    </p>
-    <p style="margin-top:10px;"><a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank" style="color: var(--primary); text-decoration: none; font-weight:600;">View OnlineJobs.ph Profile →</a></p>
   </section>
 
-  <footer style="text-align: center; padding: 40px; color: var(--text-dim); border-top: 1px solid var(--border);">
-    &copy; 2026 Philip Cesar B. Esparcia
-  </footer>
+  <hr class="divider">
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-section">
+      <div class="section-label" style="display:block; margin-bottom:14px;">Get In Touch</div>
+      <h2>Ready to work together?</h2>
+      <p>I'm open to freelance projects, long-term contracts, and full-time remote roles.<br>Let's talk about how I can help your team.</p>
+      <div class="contact-btns">
+        <a href="mailto:philip.esparcia@gmail.com" class="btn-primary">✉ Send Me an Email</a>
+        <a href="PHILIP%20CESAR%20ESPARCIA%20RESUME.pdf" download class="btn-outline">↓ Download My CV</a>
+      </div>
+      <div class="contact-meta">
+        <a href="mailto:philip.esparcia@gmail.com" class="contact-link">📧 philip.esparcia@gmail.com</a>
+        <a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank" class="contact-link">🌐 OnlineJobs.ph Profile →</a>
+      </div>
+    </div>
+  </section>
 
 </div>
 
-<script>
-  function openModal(imgSrc) {
-    const modal = document.createElement('div');
-    modal.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;justify-content:center;align-items:center;z-index:4000;cursor:zoom-out;";
-    modal.innerHTML = `<img src="${imgSrc}" style="max-width:90%;max-height:85%;border-radius:10px;">`;
-    modal.onclick = () => modal.remove();
-    document.body.appendChild(modal);
-  }
-  const btt = document.getElementById("backToTop");
-  window.onscroll = () => { if (window.scrollY > 400) btt.style.display = "flex"; else btt.style.display = "none"; };
-  function scrollToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
-</script>
+<footer>
+  <div class="container">
+    © 2026 Philip Cesar B. Esparcia · Davao, Philippines
+  </div>
+</footer>
 
+<script>
+  function showModal(src) {
+    const m = document.createElement('div');
+    m.className = 'modal';
+    m.innerHTML = `<img src="${src}" alt="Certificate">`;
+    m.onclick = () => m.remove();
+    document.body.appendChild(m);
+  }
+
+  const btt = document.getElementById('btt');
+  window.addEventListener('scroll', () => {
+    btt.style.display = window.scrollY > 500 ? 'flex' : 'none';
+  });
+</script>
 </body>
 </html>
