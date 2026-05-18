@@ -30,6 +30,29 @@
       overflow-x: hidden;
     }
 
+/* --- SKILL PILLS STYLING --- */
+.skill-pill {
+  display: inline-block; 
+  background: #1a1a1a; /* Matching your dark theme */
+  border: 1px solid #333;
+  color: #a0a0a0; 
+  padding: 6px 14px; 
+  border-radius: 50px; 
+  font-size: 0.83rem;
+  margin: 4px; 
+  transition: 0.25s;
+  cursor: default;
+}
+
+/* This adds the blue glow when you hover */
+.skill-pill:hover { 
+  border-color: #007bff; 
+  color: #007bff; 
+  transform: translateY(-2px);
+}
+
+
+
     /* ── NOISE TEXTURE ── */
     body::before {
       content: '';
@@ -60,14 +83,28 @@
     .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--text); letter-spacing: 0.02em; }
     .nav-logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 32px; }
-    .nav-links a { color: var(--muted2); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: 0.25s; }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-cta {
-      background: var(--accent); color: #fff; padding: 9px 22px;
-      border-radius: 8px; font-weight: 600; font-size: 0.85rem; text-decoration: none;
-      transition: 0.25s; letter-spacing: 0.03em;
-    }
-    .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .nav-links a { color: var(--muted2); text-decoration: none; font-size: 0.88rem; font-weight: 500; display: inline-block; transition: 0.25s; }
+    .nav-links a:hover { 
+  color: var(--accent); 
+  transform: translateY(-2px); /* This adds the upward movement */
+}
+ .nav-cta {
+    background: var(--accent);
+    color: #fff;
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: 0.25s; /* Keeps it feeling smooth but simple */
+}
+
+.nav-cta:hover {
+    background: var(--accent-dark); /* Just a simple color shift */
+    cursor: pointer;
+}
+
 
     /* ── HERO ── */
     .hero {
@@ -100,6 +137,51 @@
       border-radius: 10px; text-decoration: none; font-weight: 600;
       font-size: 0.95rem; transition: 0.25s; display: inline-flex; align-items: center; gap: 8px;
     }
+.contact-form {
+    max-width: 600px;
+    width: 100%; /* Add this to ensure it has space to center */
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This is the key centering line */
+    gap: 16px;
+}
+.form-group {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    justify-content: center; /* Keeps Name and Email balanced */
+}
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-form .btn-primary {
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .form-group { flex-direction: column; }
+}
+
+
+
     .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(14,165,233,0.3); }
     .btn-outline {
       background: transparent; color: var(--text); padding: 13px 30px;
@@ -109,7 +191,7 @@
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
     .hero-stats { display: flex; gap: 32px; }
-    .stat { }
+    
     .stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--text); }
     .stat-num span { color: var(--accent); }
     .stat-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
@@ -253,11 +335,18 @@
     .edu-school { font-size: 0.9rem; color: var(--muted2); }
 
     /* ── CONTACT ── */
-    .contact-section {
-      background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 32px; padding: 72px 60px; text-align: center;
-      position: relative; overflow: hidden;
-    }
+   .contact-section {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 72px 60px;
+    text-align: center; /* This centers the H2 and P text */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This keeps the form block in the middle */
+}
     .contact-section::before {
       content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
       width: 500px; height: 300px; border-radius: 50%;
@@ -315,10 +404,10 @@
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
-    <a href="#showcase">Work</a>
+    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="mailto:philip.esparcia@gmail.com" class="nav-cta">Hire Me</a>
+  <a href="#contact" class="nav-cta">Hire Me</a>
 </nav>
 
 <div class="container">
@@ -328,10 +417,17 @@
     <div class="hero-inner">
       <div>
         <div class="hero-tag">Available for new projects</div>
-        <h1>IT & Virtual<br>Assistant <em>Expert</em></h1>
+        <h2>AI AUTOMATION & SYSTEMS OPERATIONS<br>VIRTUAL ASSISTANT, WEB DEVELOPER, &
+DIGITAL ENTREPRENEUR </h2>
         <p class="hero-sub">
-          10+ years delivering rock-solid technical support, system administration, and 
-          virtual assistance — helping businesses run smoother and stay productive.
+          Forward-thinking IT professional, Web Developer, and
+Digital Entrepreneur seeking a strategic partnership as a
+high-level Virtual Assistant. I go beyond traditional
+administrative support, specializing in hyperautomation
+and business systems creation. Adept at designing custom
+digital solutions and utilizing AI tools to drive operational
+excellence, ensure system continuity, and provide high-level
+executive backing for scaling businesses
         </p>
         <div class="hero-btns">
           <a href="mailto:philip.esparcia@gmail.com" class="btn-primary">
@@ -369,6 +465,40 @@
   </section>
 
   <hr class="divider">
+
+
+<section id="skills">
+  <div class="section-label">Expertise</div>
+  <h2 class="section-title">Technical & Professional Skills</h2>
+  
+  <div class="skills-layout" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 40px;">
+    
+    <div class="skill-group">
+      <h4 style="font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 700;">Technical Proficiency</h4>
+      <div class="skill-pill">VB.NET, C++, C#, ASP.NET, PHP, MySQL,HTML, CSS and Javascript</div>
+      <div class="skill-pill">Microsoft Office Expert</div>
+      <div class="skill-pill">NCII Computer System Servicing</div>
+      <div class="skill-pill">Windows 7/8/10 Reformatting</div>
+      <div class="skill-pill">System Management & POS Maintenance</div>
+      <div class="skill-pill">CCTV & Access Point Installation</div>
+      <div class="skill-pill">Shopify Product Listing</div>
+      <div class="skill-pill">Lead Generation</div>
+    </div>
+
+    <div class="skill-group">
+      <h4 style="font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 700;">Professional Attributes</h4>
+      <div class="skill-pill">Time Management & Prioritization</div>
+      <div class="skill-pill">Independent & Collaborative Decision Making</div>
+      <div class="skill-pill">Proactive Innovator</div>
+      <div class="skill-pill">Analytical Troubleshooting & Problem-Solving</div>
+      <div class="skill-pill">Data Confidentiality & Security Mindset</div>
+    </div>
+
+  </div>
+</section>
+
+
+
 
   <!-- SERVICES -->
   <section id="services">
@@ -430,10 +560,10 @@
     <p class="section-sub">A decade-long track record across telecommunications, IT, and remote work.</p>
     <div class="timeline">
       <div class="tl-item">
-        <div class="tl-date">2023 — 2025</div>
-        <div class="tl-role">Freelance Operational Data Entry Specialist</div>
-        <div class="tl-company">Remote / Freelance</div>
-        <div class="tl-desc">Handled data entry, document management, and remote operational support for clients across various industries.</div>
+        <div class="tl-date">2025 - PRESENT</div>
+        <div class="tl-role">DIGITAL INTREPRENEUR | 2025 - PRESENT</div>
+        <div class="tl-company">FREELANCE / PROJECT-BASED</div>
+        <div class="tl-desc">Developing and scaling digital assets through custom web solutions and high-level growth strategies.</div>
       </div>
       <div class="tl-item">
         <div class="tl-date">2021 — 2023</div>
@@ -510,19 +640,7 @@
 
   <hr class="divider">
 
-  <!-- SHOWCASE -->
-  <section id="showcase">
-    <div class="section-label">Portfolio</div>
-    <h2 class="section-title">Showcase & Setup</h2>
-    <p class="section-sub">A look at my workspace, equipment, and introduction video.</p>
-    <div class="showcase-grid">
-      <div class="showcase-card full">
-        <div class="showcase-label">Introduction</div>
-        <div class="showcase-title">Watch My Intro Video</div>
-        <video controls>
-          <source src="intro.mp4" type="video/mp4">
-        </video>
-      </div>
+ 
       <div class="showcase-card">
         <div class="showcase-label">Environment</div>
         <div class="showcase-title">My Workspace Setup</div>
@@ -544,10 +662,18 @@
       <div class="section-label" style="display:block; margin-bottom:14px;">Get In Touch</div>
       <h2>Ready to work together?</h2>
       <p>I'm open to freelance projects, long-term contracts, and full-time remote roles.<br>Let's talk about how I can help your team.</p>
-      <div class="contact-btns">
-        <a href="mailto:philip.esparcia@gmail.com" class="btn-primary">✉ Send Me an Email</a>
-        <a href="PHILIP%20CESAR%20ESPARCIA%20RESUME.pdf" download class="btn-outline">↓ Download My CV</a>
-      </div>
+    <form action="https://formspree.io/f/mbdbldeb" method="POST" class="contact-form">
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+  </div>
+  <textarea name="message" placeholder="How can I help you?" rows="5" required></textarea>
+  <div class="contact-btns">
+    <button type="submit" class="btn-primary">Send Message</button>
+    <a href="PHILIP%20CESAR%20ESPARCIA%20RESUME.pdf" download class="btn-outline">↓ Download My CV</a>
+  </div>
+</form>
+
       <div class="contact-meta">
         <a href="mailto:philip.esparcia@gmail.com" class="contact-link">📧 philip.esparcia@gmail.com</a>
         <a href="https://www.onlinejobs.ph/jobseekers/info/3574279" target="_blank" class="contact-link">🌐 OnlineJobs.ph Profile →</a>
